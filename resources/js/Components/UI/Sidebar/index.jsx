@@ -11,19 +11,25 @@ import ComboItem from "@/Components/UI/Sidebar/ComboItem.jsx";
 
 
 function Index(props) {
+    const menuAction = (e) => {
+        e.preventDefault()
+        e.target.closest('div').parentElement.classList.toggle('open')
+        document.querySelector('body').classList.toggle('sidebar-main')
+    }
+
     return (
         <div className="iq-sidebar">
             <input type="hidden" value="#" id="base_url"/>
             <div className="iq-sidebar-logo d-flex justify-content-between">
-                <a href="#">
-                    <img src="https://virtualistbd.com/uploads/settings/1695028643-sec-logo.png" className="img-fluid"
-                         alt="MBM"/>
-                </a>
+                <Link href={route('dashboard')}>
+                    <img src="https://virtualistbd.com/uploads/settings/1695028643-icon.png" className="img-fluid"
+                         alt="VBD"/>
+                </Link>
                 <div className="iq-menu-bt-sidebar">
                     <div className="iq-menu-bt align-self-center">
                         <div className="wrapper-menu" style={{fontSize: "20px"}}>
-                            <div className="main-circle"><FaEllipsis/></div>
-                            <div className="hover-circle"><FaEllipsisVertical/></div>
+                            <div className="main-circle" onClick={e=>menuAction(e)}><FaEllipsis/></div>
+                            <div className="hover-circle" onClick={e=>menuAction(e)}><FaEllipsisVertical/></div>
                         </div>
                     </div>
                 </div>

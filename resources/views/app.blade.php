@@ -8,12 +8,11 @@
         <link rel="icon" href="https://virtualistbd.com/uploads/settings/1695028643-icon.png" type="image/png">
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+{{--        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">--}}
 
-{{--        <!-- Fonts -->--}}
-{{--        <link rel="preconnect" href="https://fonts.bunny.net">--}}
-{{--        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />--}}
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @routes
@@ -21,7 +20,7 @@
         @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
         @inertiaHead
     </head>
-    <body class="font-sans antialiased">
+    <body >
         @inertia
     </body>
 </html>

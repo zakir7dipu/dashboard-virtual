@@ -1,7 +1,6 @@
 import GuestLayout from '@/Layouts/GuestLayout';
 import {Col, Row} from "react-bootstrap";
-import {Link} from "@inertiajs/react";
-import "../../css/all.css"
+
 import Footer from "@/Components/UI/Footer/index.jsx";
 import Header from "@/Components/UI/Header/index.jsx";
 import Sidebar from "@/Components/UI/Sidebar/index.jsx"

@@ -16,17 +16,24 @@ import {MdPersonSearch} from "react-icons/md";
 import {FaBell, FaComments} from "react-icons/fa";
 import RightNav from "@/Components/UI/Header/RightNav.jsx";
 import NavbarCollapse from "@/Components/UI/Header/NavbarCollapse.jsx";
+import {FaEllipsis, FaEllipsisVertical} from "react-icons/fa6";
 
 function Index({user}) {
+    const menuAction = (e) => {
+        e.preventDefault()
+        e.target.closest('div').parentElement.classList.toggle('open')
+        document.querySelector('body').classList.toggle('sidebar-main')
+    }
+
     return (
         <div className="iq-top-navbar">
             <div className="iq-navbar-custom">
                 <div className="iq-sidebar-logo">
                     <div className="top-logo">
                         <Link href="#" className="logo">
-                            <img src="https://virtualistbd.com/uploads/settings/1695028643-sec-logo.png"
+                            <img src="https://virtualistbd.com/uploads/settings/1695028643-icon.png"
                                  className="img-fluid" alt=""/>
-                            <span>MBM Group</span>
+                            <span>Virtualist BD</span>
                         </Link>
                     </div>
                 </div>
@@ -39,6 +46,13 @@ function Index({user}) {
                                 <MdPersonSearch/>
                             </a>
                         </form>
+                    </div>
+
+                    <div className="iq-menu-bt align-self-center">
+                        <div className="wrapper-menu">
+                            <div className="main-circle"><FaEllipsis onClick={e=>menuAction(e)}/></div>
+                            <div className="hover-circle"><FaEllipsisVertical onClick={e=>menuAction(e)}/></div>
+                        </div>
                     </div>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -74,10 +88,10 @@ function Index({user}) {
 
                             <NavbarCollapse
                                 icon={
-                                   <>
-                                       <FaBell/>
-                                       <span className="bg-danger dots"></span>
-                                   </>
+                                    <>
+                                        <FaBell/>
+                                        <span className="bg-danger dots"></span>
+                                    </>
                                 }
                             >
                                 <div className="iq-sub-dropdown">
@@ -146,10 +160,10 @@ function Index({user}) {
 
                             <NavbarCollapse
                                 icon={
-                                   <>
-                                       <FaComments/>
-                                       <span className="bg-primary count-mail"></span>
-                                   </>
+                                    <>
+                                        <FaComments/>
+                                        <span className="bg-primary count-mail"></span>
+                                    </>
                                 }
                             >
                                 <div className="iq-sub-dropdown">
@@ -230,7 +244,7 @@ function Index({user}) {
                 </nav>
             </div>
         </div>
-);
+    );
 }
 
 export default Index;
